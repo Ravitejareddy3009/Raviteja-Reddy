@@ -1,0 +1,96 @@
+@model WebApplication.TestTable  
+@using WebApplication;
+
+@using (Html.BeginForm("Post", "Home", FormMethod.Post, new { }))  
+{  
+    @Html.ValidationSummary(true)  
+      
+<fieldset>
+    <legend></legend>
+    <div class="editor-label">
+        ID
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Id, new { @readonly = "readonly" })
+    </div>
+    <div class="editor-label">
+        FirstName
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+    <div class="editor-label">
+        LastName
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    <div class="editor-label">
+        Email
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="editor-label">
+        PhoneNumber
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PhoneNumber)
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>
+    <div class="editor-label">
+        Address
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Address)
+        @Html.ValidationMessageFor(model => model.Address)
+    </div>
+    <div class="editor-label">
+        Address
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Address)
+        @Html.ValidationMessageFor(model => model.Address)
+    </div>
+    <div class="editor-label">
+        City
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.City)
+        @Html.ValidationMessageFor(model => model.City)
+    </div>
+    <div class="editor-label">
+        State
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.State)
+        @Html.ValidationMessageFor(model => model.State)
+    </div>
+    <div class="editor-label">
+        Country
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Country)
+        @Html.ValidationMessageFor(model => model.Country)
+    </div>
+    <div class="editor-label">
+        PostalCode
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PostalCode)
+        @Html.ValidationMessageFor(model => model.PostalCode)
+    </div>
+
+    <p>
+        <input type="submit" value="Update" id="btnsave" />
+    </p>
+</fieldset>  
+}  
+<div>  
+    @Html.ActionLink("Close", "Index")  
+</div> 
+
+

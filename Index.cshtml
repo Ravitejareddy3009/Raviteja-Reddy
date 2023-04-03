@@ -1,0 +1,33 @@
+@model IEnumerable<WebApplication.Contact>  
+@using WebApplication;
+<table >
+    <thead>
+        <tr>
+            <th>Id</th>                      
+            <th>Name</th>  
+            <th>Description</th>
+            <th></th> 
+            <th></th> 
+        </tr> 
+    </thead>
+    <tbody>  
+          @foreach (var item in Model)  
+          {
+              <tr>
+                  <td>@item.FirstName</td>
+                  <td>@item.LastName</td>
+                  <td>@item.Email</td>
+                  <td>@item.PhoneNumber</td>
+                  <td>@item.Address</td>
+                  <td>@item.City</td>
+                  <td>@item.State</td>
+                  <td>@item.Country</td>
+                  <td>@item.PostalCode</td>
+                  <td>@Html.ActionLink("Edit", "Edit", new { Id = @item.Id })</td>
+                  <td>@Html.ActionLink("Delete", "Delete", new { Id = @item.Id }, new { onclick = "return confirm('Are you want to delete record?');" })</td>
+              </tr>  
+          }
+    </tbody>
+</table>
+<br/>
+@Html.ActionLink("Add Item", "Edit", new { Id = 0})
